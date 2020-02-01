@@ -1,0 +1,273 @@
+
+body{
+	margin:0px;
+	
+	font-family:Arial,Helvetica,Sans-serif;
+	background-color:#effcc0;
+}
+a{
+	color:#000;
+}
+/*.extra-space{
+	margin:0px 15px;
+	padding: 0px 20px 20px 20px;
+	width:80%;
+	
+	position:center;
+	
+}*/
+
+.header{
+	background-color:#fae9b9;
+	border-bottom: 2px solid green;
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+	position:fixed; /* to set the header fixed and not scroll with the content */
+	width:100%;
+	z-index:3; /*if i have a content it can be below the header when is is scroll */
+	top:0;
+}
+.header ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	overflow:hidden;
+	background-color:#fff;
+}
+.header ul a{
+	display:block;
+	padding:20px;
+	border-right: 1px solid #aaa;
+	text-decoration:none;
+}
+.header ul a:hover{
+	background-color:#d2fab9;
+}
+.header .logo{
+	float:left;
+	display:block;
+	font-size:2em;
+	padding: 10px 20px;
+
+}
+.header .logo img{
+	float:left;
+	display:block;
+	height:45px;
+	width: auto;
+
+}
+/* for mobile web */
+.header .menu{
+	clear:both;
+	max-height:0;/* this will make the menu to disappear,hidden, in desktop */
+	transition:max-height .2s ease-out;
+}
+/* the parent icon. that's the label class*/
+.header .menu-icon{
+	border:1px solid grey;
+	padding: 28px 20px;
+	position: relative; 
+	float:right;
+	cursor:pointer;
+}
+
+/* the child icon which is the span class */
+.header .menu-icon .nav-icon{
+	background:#333;
+	display:block;
+	height:2px;
+	width:18px;
+	position: relative;
+	transition:background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+	background:#333;
+	content: "";
+	display:block;
+	height:100%;
+	width:100%;
+	position: absolute;
+	transition:all .2s ease-out;
+	top:5px;
+}
+
+.header .menu-icon .nav-icon:after{
+	background:#333;
+	content: "";
+	display:block;
+	height:100%;
+	width:100%;
+	position: absolute;
+	transition:all .2s ease-out;
+	top:-5px;
+}
+
+.header .menu-btn{
+	display:none;
+}
+/* when the menu-btn is checked look for a siblin of .menu and giv it max height of 240 */
+.header .menu-btn:checked ~ .menu{
+	max-height:240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+	background:transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+	transform:rotate(-45deg);
+	top:0;
+
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+	transform:rotate(45deg);
+	top:0;
+}
+/* Showcase */
+#showcase {
+
+  min-height: 600px;
+  background:url('Images/headerbg.png') no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+ #showcase h1{
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+  background-color: hsla(30,33%,25%,0.3);
+}
+ #showcase p{
+	
+  font-size: 20px;
+}
+
+ #showcase > .container{
+  background-color: hsla(30,33%,25%,0.2);
+  
+}
+/*.show{
+	padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+  */
+  .wrapper{
+      display:grid;
+      grid-template-columns:1fr 2fr 1fr;
+      grid-auto-rows:minmax(100px, auto);
+      grid-gap:1em;
+      justify-items:stretch;
+      align-items:stretch;
+	  border-top: green 3px solid;
+    }
+
+    .wrapper > div{
+      background:#eee;
+      padding:1em;
+    }
+    .wrapper > div:nth-child(odd){
+      background:#ddd;
+    }
+
+    .box1{
+      /*align-self:start;*/
+      grid-column:1/3;
+      grid-row:1/3;
+    }
+
+    .box2{
+      /*align-self:end;*/
+      grid-column:3;
+      grid-row:1/3;
+    }
+
+    .box3{
+      /*justify-self:end;*/
+      grid-column:2/4;
+      grid-row:3;
+    }
+
+    .box4{
+      grid-column:1;
+      grid-row:2/4;
+      border:1px solid #333;
+    }
+	
+	
+	.flex_box{
+		display:flex;
+		justify-content: space-between;
+	}
+	.flex_box .fbox{
+		padding: 20px;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+		flex-basis: 30%;
+	}
+	.flex_box .fbox button{
+		cursor:pointer;
+	}
+
+ footer{
+  padding: 20px;
+  margin-top: 20px;
+  color: #0a1870;
+  background-color:#d2fab9;
+  text-align: center;
+  height: 200px;
+  border-top: green 3px solid;
+}
+footer .foot-right{
+  padding: 20px;
+  color: #0a1870;
+  background-color: #32a0c2;
+  text-align: center;
+  float:center;
+}
+.footer_box{
+	display:flex;
+	justify-content: space-between;
+}
+.footer_box .box{
+	padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+.box:nth-child(1) {background-color: #c0dbe2;}
+.box:nth-child(2) {background-color: #cdf1c3;}
+.box:nth-child(3) {background-color: #ccb9da;}
+
+@media (min-width:48em){
+	.header li{
+		float:left;
+	}
+	.header li a{
+		padding:20px 30px; 
+	}
+	.header .menu{
+		clear:none;
+		float:right;
+		max-height:none;
+		background-color:#fae9b9;
+	}
+	.header .menu-icon{
+		display:none; /*it removes the x icon in the desktop view */
+	}
+	#showcase > .container{
+  background-color: hsla(30,33%,25%,0.2);
+  display: flex;
+  justify-content: space-between;
+}
+.show{
+	padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+	 
+}
